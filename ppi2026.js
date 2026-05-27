@@ -240,7 +240,7 @@ function Product(name, sto, ram, price, qty, category){
     this.name = name;
     this.sto = sto;
     this.ram = ram;
-    this.pricce = price;
+    this.price = price;
     this.qty = qty; 
     this.category = category; 
 
@@ -262,4 +262,68 @@ const estoque = [
   {...p6}];
 console.log(estoque);
 
+// a) Valor total de todos os produtos em estoque
+const valorTotal = estoque.reduce((total, produto) => {
+    return total + (produto.pricce * produto.qty);
+}, 0);
 
+console.log("Valor total do estoque: R$", valorTotal);
+
+// b) Ordenar por nome
+
+// Crescente
+const nomeCrescente = [...estoque].sort((a, b) => 
+    a.name.localeCompare(b.name)
+);
+
+console.log("Nome crescente:");
+console.log(nomeCrescente);
+
+// Decrescente
+const nomeDecrescente = [...estoque].sort((a, b) => 
+    b.name.localeCompare(a.name)
+);
+
+console.log("Nome decrescente:");
+console.log(nomeDecrescente);
+
+// c) Ordenar por preço
+
+// Crescente
+const precoCrescente = [...estoque].sort((a, b) => 
+    a.price - b.price
+);
+
+console.log("Preço crescente:");
+console.log(precoCrescente);
+
+// Decrescente
+const precoDecrescente = [...estoque].sort((a, b) => 
+    b.price - a.price
+);
+
+console.log("Preço decrescente:");
+console.log(precoDecrescente);
+
+// d) Filtrar por categoria
+
+const celulares = estoque.filter(produto => 
+    produto.category === 'Celular'
+);
+
+console.log("Celulares:");
+console.log(celulares);
+
+const tablets = estoque.filter(produto => 
+    produto.category === 'Tablet'
+);
+
+console.log("Tablets:");
+console.log(tablets);
+
+const notebooks = estoque.filter(produto => 
+    produto.category === 'Notebook'
+);
+
+console.log("Notebooks:");
+console.log(notebooks);
