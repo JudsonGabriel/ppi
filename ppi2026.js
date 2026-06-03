@@ -327,3 +327,4 @@ const notebooks = estoque.filter(produto =>
 
 console.log("Notebooks:");
 console.log(notebooks);
+
