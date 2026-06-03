@@ -34,10 +34,10 @@ const filmes = [
 function buscarFilmes(genero, criterio) {
   return filmes
     .filter((filme) => filme.genero === genero)
-    .slice() // cria uma cópia antes de ordenar
+    .slice() 
     .sort((a, b) => {
       if (criterio === "ano") {
-        return b.ano - a.ano; // mais recente primeiro
+        return b.ano - a.ano; 
       }
 
       if (criterio === "titulo") {
