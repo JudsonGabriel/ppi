@@ -1,0 +1,13 @@
+main {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10rem;
+}
+
+main h2 {
+    font-size: 3rem;
+}
